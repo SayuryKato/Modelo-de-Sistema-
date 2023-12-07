@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Dados cadastrados</title>
 </head>
+
 <body>
-<nav class="navbar">
+    <nav class="navbar">
         <div class="container">
-          <a class="navbar-brand" href="#">
-            <span>Área de Cadastros</span>
-          </a>
-          </a>
+            <a class="navbar-brand" href="#">
+                <span>Área de Cadastros</span>
+            </a>
+            </a>
             <button type="button" class="btn-close" style="background-color: white; color:black;" aria-label="Close" onclick="sair()"></button>
         </div>
-      </nav><br>
-<div class="container">
-    <h2 style="text-align: center; color: #0838BC;">Dados Cadastrados</h2>
-    <div class="table-responsive">
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Nº Nota Fiscal</th>
-                    <th>Data Nota Fiscal</th>
-                    <th>Fornecedor</th>
-                    <th>Marca</th>
-                    <th>Código</th>
-                    <th>Código de Barras</th>
-                    <th>Quantidade</th>
-                    <th>Nome do Produto</th>
-                    <th>Preço de Compra</th>
-                    <th>Desconto Percentual</th>
-                    <th>Valor Final de Compra</th>
-                    <th>Preço de Venda Calculado</th>
-                    <th>Nome do Produto na Venda</th>
-                    <th>Ações</th>
-                    <th>Editar Dados</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
+    </nav><br>
+    <div class="container">
+        <h2 style="text-align: center; color: #0838BC;">Dados Cadastrados</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Nº Nota Fiscal</th>
+                        <th>Data Nota Fiscal</th>
+                        <th>Fornecedor</th>
+                        <th>Marca</th>
+                        <th>Código</th>
+                        <th>Código de Barras</th>
+                        <th>Quantidade</th>
+                        <th>Nome do Produto</th>
+                        <th>Preço de Compra</th>
+                        <th>Desconto Percentual</th>
+                        <th>Valor Final de Compra</th>
+                        <th>Preço de Venda Calculado</th>
+                        <th>Nome do Produto na Venda</th>
+                        <th>Ações</th>
+                        <th>Editar Dados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
                     $servername = "xmysql.oticasmundialita.com";
                     $username = "oticasmundialit1";
                     $password = "Lindabrao875@678";
@@ -90,18 +92,19 @@
                     }
 
                     $conn->close();
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script>
-    function sair() {
-            window.location.href = "inicial.php"; 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        function sair() {
+            window.location.href = "inicial.php";
         }
-</script>
+    </script>
 
 </body>
+
 </html>

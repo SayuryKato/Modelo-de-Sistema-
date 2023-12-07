@@ -19,6 +19,7 @@ $nome_produto = $_POST['nome_produto'];
 $preco_compra = $_POST['preco_compra'];
 $desconto_percentual = $_POST['desconto_percentual'];
 $valor_final_compra = $_POST['valor_final_compra'];
+$porc_lucro_venda = $_POST['porc_lucro_venda'];
 $preco_venda_desejado = $_POST['preco_venda_desejado'];
 $nome_produto_venda = $_POST['nome_produto_venda'];
 

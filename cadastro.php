@@ -42,7 +42,7 @@
             <label for="fornecedor"> <strong>Fornecedor:</strong></label>
             <input class="responsInput" type="text" id="fornecedor" name="fornecedor" required>
           </p>
-          <label for="categoria">Escolha uma categoria:</label>
+          <label for="categoria"><strong>Escolha uma categoria:</strong></label>
           <select class="responsInput" id="categoria" name="categoria">
             <option value="artigo-esportivo">Artigo Esportivo</option>
             <option value="artigo-cozinha">Artigo de Cozinha</option>
@@ -80,26 +80,26 @@
           </p>
           <p>
             <label for="preco_compra"> <strong>Preço do produto da Compra:</strong></label>
-            <input class="responsInput" type="number" step="0.01" id="preco_compra" name="preco_compra">
-
+            <input class="responsInput" type="number" step="0.01" id="preco_compra" name="preco_compra" oninput="calc_desconto()">
           </p>
-
+          <p>
+            <label for="desconto_percentual"> <strong>Desconto Percentual(%):</strong></label>
+            <input class="responsInput" type="number" step="0.01" id="desconto_percentual" name="desconto_percentual" value="0" oninput="calc_desconto()">
+          </p>
+          <p>
+            <label for="valor_final_compra"> <strong>Valor Final de Compra:</strong></label>
+            <input class="responsInput" type="number" step="0.01" id="valor_final_compra" name="valor_final_compra">
+          </p>
         </fieldset>
       </div>
       <div><br>
-
         <div class="primeiradiv">
           <fieldset>
+            <!-- Sayury Lucro-->
             <p>
-              <label for="desconto_percentual"> <strong>Desconto Percentual:</strong></label>
-              <input class="responsInput" type="number" step="0.01" id="desconto_percentual" name="desconto_percentual">
+              <label for="porc_lucro_venda"> <strong>Porcentagem de Lucro(%):</strong></label>
+              <input class="responsInput" type="number" step="0.01" id="porc_lucro_venda" name="porc_lucro_venda" oninput="calc_lucro()" required>
             </p>
-
-            <p>
-              <label for="valor_final_compra"> <strong>Valor Final de Compra:</strong></label>
-              <input class="responsInput" type="number" step="0.01" id="valor_final_compra" name="valor_final_compra">
-            </p>
-
             <p>
               <label for="preco_venda_desejado"> <strong>Preço de Venda Desejado:</strong></label>
               <input class="responsInput" type="number" step="0.01" id="preco_venda_desejado" name="preco_venda_desejado">
@@ -123,6 +123,23 @@
   <script>
     function sair() {
       window.location.href = "inicial.php";
+    }
+    function calc_desconto(){
+      let preco_produto = parseFloat(document.getElementById("preco_compra").value);
+      let desconto_produto = parseFloat(document.getElementById("desconto_percentual").value);
+      if (!isNaN(preco_produto) && !isNaN(desconto_produto)){
+        var valor_final = preco_produto - (preco_produto*(desconto_produto/100));
+        document.getElementById('valor_final_compra').value = valor_final.toFixed(2);
+        calc_lucro();
+      }
+    }
+    function calc_lucro(){
+      let valor_final_compra = parseFloat(document.getElementById("valor_final_compra").value);
+      let lucro_produto = parseFloat(document.getElementById("porc_lucro_venda").value);
+      if (!isNaN(valor_final_compra) && !isNaN(lucro_produto)){
+        var preco_final = valor_final_compra + (valor_final_compra*(lucro_produto/100));
+        document.getElementById('preco_venda_desejado').value = preco_final.toFixed(2);
+      }
     }
   </script>
 

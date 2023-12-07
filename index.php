@@ -15,11 +15,11 @@
                 <h2>LOGIN</h2>
                 <div class="input-group">
                 <label for="nome">Usuário</label>
-                <input type="text" id="nome" name="nome" >
+                <input type="text" id="nome" name="nome" required>
             </div>
             <div class="input-group">
                 <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" >
+                <input type="password" id="senha" name="senha" required>
                 <span class="material-symbols-outlined">
                     visibility
                 </span>
