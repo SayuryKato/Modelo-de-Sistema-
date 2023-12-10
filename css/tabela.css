@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+.table-responsive th, .table-responsive td{
+    text-align: center;
+    white-space: nowrap;
+}

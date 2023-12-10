@@ -21,7 +21,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <title>Home</title>
-    <link rel="stylesheet" href="../modelo_sistema/css/media_queryLogin.css">
+    <link rel="stylesheet" href="css/mediaQ_cadastro.css">
 </head>
 <body style=" background-color:#F3F3F3">
     <nav class="navbar">

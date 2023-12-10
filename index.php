@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <title>Login</title>
-
     <link rel="stylesheet" href="./css/media_query.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>    
+</head>   
     <body>
         <div class="container">
             <form action="login.php" method="post">
+            <?php
+        if(isset($_GET['mensagem'])){
+          if ($_GET['mensagem'] != ''){
+            echo $_GET['mensagem'];
+            $_GET['mensagem'] = '';
+          }
+        }
+      ?> 
                 <h2>LOGIN</h2>
                 <div class="input-group">
                 <label for="nome">Usuário</label>
-                <input type="text" id="nome" name="nome" required>
+                <input type="text" id="nome" name="nome" required >
             </div>
             <div class="input-group">
                 <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" required>
+                <input type="password" id="senha" name="senha" required >
                 <span class="material-symbols-outlined">
                     visibility
                 </span>
@@ -38,7 +45,7 @@
             } else {
                 input.setAttribute('type', 'password');
             }
-        });
+        });   
     </script>
 </body>
 </html>

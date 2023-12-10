@@ -22,10 +22,7 @@ $valor_final_compra = $_POST['valor_final_compra'];
 $porc_lucro_venda = $_POST['porc_lucro_venda'];
 $preco_venda_desejado = $_POST['preco_venda_desejado'];
 $nome_produto_venda = $_POST['nome_produto_venda'];
-
-$valor_a_vender = $preco_venda_desejado * $valor_final_compra;
-
-$preco_venda_calculado = $preco_compra * $preco_venda_desejado;
+$preco_venda_calculado = $preco_venda_desejado;
 function gerarCodigoBarrasUnico() {
     $prefixo = '972';
     $numerosAleatorios = array_map('strval', array_unique(range(0, 9)));
